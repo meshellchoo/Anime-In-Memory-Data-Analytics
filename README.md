@@ -1,6 +1,5 @@
 # cs180project-021-sea-cream-jasmine
-- **Please grade based on React Website**
-- **Regression Tests and Continuous Integration NOT Included**
+
 
 ## Table of Contents
 - [Home Page Features](#home-page-features)
