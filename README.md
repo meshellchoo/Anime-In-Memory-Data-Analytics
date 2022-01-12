@@ -12,7 +12,7 @@
 - [Project Setup](#project-setup)
   - [Django Setup](#django-setup)
   - [React Setup](#react-setup)
-- [High-Level Guide of Source Code for Django and React](#high-level-guide)
+
 
 <a name="home-page-features"></a>
 # Home Page Features
@@ -133,74 +133,4 @@ npm start
 ```
 
 
-
-<a name="high-level-guide"></a>
-# High-Level Guide of Source Code for Django and React
- *  `admin/` - folder for Django (backend) files
-    * `admin/` - folder for admin files
-    * `app/` - contains backend files for app
-      * `database/` - contains anime.csv file
-        * `anime.csv` - modified anime.csv file with no "adult" anime
-      * `scj_filter.py` - file containing functions for analytics and incremental analytics
-         * `+handle_change(action,anime_obj)` (incremental analytics) - if there are any changes like edit, insert, delete, this function will just modify one entry in the map
-         * `+binary_search(arr, score)` (incremental analytics) - binary search function to see where to insert an entry into our sorted list in our local map 
-         * `+update_prev_data_map_with_list(action,anime_obj,map,type)` (incremental analytics) - store/get previously sorted arrays into our local map and update accordingly
-         * `+update_prev_data_map(action,anime_obj,map,type)` (incremental analytics) - store/get previously sorted arrays into our local map and update accordingly
-         * `+sort_by_score_genre(target_genre, n)` - function for analytic 1 that sorts the top n highest scoring anime from specified genre
-         * `+sort_by_score_type(target_type, n)` - function for analytic 2 that sorts the top n highest scoring anime from specified type
-         * `+top_n_highest_average_anime_by_studio(studio,n)` - function for analytic 3 that sorts the top n highest scoring anime from specified studio
-         * `+top_n_highest_average_anime_by_rating(rating,n)` - function for analytic 4 that sorts the top n highest scoring anime from specified rating
-         * `+average_duration_by_top(target_genre, n)` - function for analytic 5 that generates a bar graph showing the average durations for top n anime from each genre
-         * `+_sort_by_completion_rate(target_genre,n)` - function for analytic 6 and 7 that sorts the top n animes with the highest completion rate from specified genre or type
-      * `scj_parcer.py` - file containing functions to parce csv to json, functions to filter searches, and functions to add, delete, modify, import, and backup anime in database
-         * functions to parse csv to json
-           * `+with open(path, 'r', encoding="UTF-8") as file` - uses UTF-8 to read the Japanese characters, then parses the data in file
-           * `+generateJson()` - generates a json file from the results of the function above
-           * `+get_list()` - gets the anime dictionary list
-         * functions to filter searches
-           * `+search_by_name(target_name)` - function to filter search by name
-           * `+search_by_score(target_score)` - function to filter search by score
-           * `+search_by_producers(target_producer)` - function to filter search by producer/studio
-           * `+search_by_genres(target_genre)` - function to filter search by genre
-           * `+search_by_type(target_type)` - function to filter search by type
-         * functions to add, delete, modify, import, and backup anime in database
-           * `+insert(anime_name, score, ranking, episodes, type, popularity, genre, studio)` - function for adding anime to the database
-           * `+delete(target_name)` - function for adding anime to the database
-           * `+update(anime_name, score, ranking, episodes, type, popularity, genre, studio)` - function for adding anime to the database
-           * `+import_data()` - function for importing anime.json to local data structure
-           * `+backup_data()` - function for backing up server-side change to local data
-      * `urls.py` - file containing the url paths for the website
-
- * `react-app/` - folder for react frontend files
-   * `node_modules/` - folder for installed npm packages
-   * `public/` - folder for react icons and logos
-   * `src/` - folder for pages and components files
-      * `Components/` - folder for component files
-        *  `BarGraph.css` - css file to stylize the bar graph
-        *  `BarGraph.js` - js file to stylize the bar graph and connect to frontend code
-        *  `GenreBar.css` - css file to stylize the genre search bar
-        *  `GenreBar.js` - js file to stylize the genre search bar and connect to frontend code
-        *  `ProducerBar.css` - css file to stylize the producer search bar
-        *  `ProducerBar.js` - js file to stylize the producer search bar and connect to frontend code
-        *  `ScoreBar.css` - css file to stylize the score bar
-        *  `ScoreBar.js` - js file to stylize the score bar and connect to frontend code
-        *  `SearchBar.css` - css file to stylize the anime name bar
-        *  `SearchBar.js` - js file to stylize the anime bar and connect to frontend code
-      * `images/` - folder for images
-      * `Pages/` - folder for pages
-        *  `Analytics.css` - css file to stylize the Analytics page
-        *  `Analytics.js` - js file to stylize the Analytics page and connect to frontend code
-        *  `AnimeChange.css` - css file to stylize the Modify page
-        *  `AnimeChange.js` - js file to stylize the Modify page and connect to frontend code
-        *  `FeatureBar.css` - css file to stylize the general search bar
-        *  `FeatureBar.js` - js file to stylize the general search and connect to frontend code
-        *  `Home.css` - css file to stylize the Home page
-        *  `Home.js` - js file to stylize the Home page and connect to frontend code
-      * `anime.json` - json file that contains the parsed anime.csv
-      * `saved_anime.json` - json file that contains the backed-up changes made to database
-      * `App.css` - css file to stlyize the overall frontend layout
-      * `App.js` - js file to stlyize the overall frontend layout and connect to frontend code
-      * `genre.js` - js file containing array of genres
-      * `index.css` - css file to stlyize the overall frontend layout
-      * `index.js` - json file that contains the backed-up changes made to database
 
