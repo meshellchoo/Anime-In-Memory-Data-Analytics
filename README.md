@@ -12,7 +12,6 @@
 - [Project Setup](#project-setup)
   - [Django Setup](#django-setup)
   - [React Setup](#react-setup)
-  - [Flutter Setup](#flutter-setup)
 - [High-Level Guide of Source Code for Django and React](#high-level-guide)
 
 <a name="home-page-features"></a>
@@ -134,17 +133,7 @@ npm start
 ```
 
 
-<a name="flutter-setup"></a>
-## Flutter Setup (Install [Flutter](https://docs.flutter.dev/get-started/install) first) 
 
-1. cd into the Flutter folder on a separate terminal
-```sh 
-cd flutterapp/
-``` 
-2. activate the Flutter server
-```sh
-flutter run -d chrome
-```
 <a name="high-level-guide"></a>
 # High-Level Guide of Source Code for Django and React
  *  `admin/` - folder for Django (backend) files
