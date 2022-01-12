@@ -69,26 +69,6 @@
   * [Recharts](https://recharts.org/en-US/)
   * [Axios](https://www.axios.com/)
 
-1. "@emotion/react": "^11.5.0"
-2. "@emotion/styled": "^11.3.0"
-3. "@material-ui/core": "^4.11.4"
-4. "@material-ui/icons": "^4.11.2"
-5. "@mui/icons-material": "^5.0.4"
-6. "@mui/material": "^5.0.4"
-7. "@testing-library/jest-dom": "^5.14.1"
-8. "@testing-library/react": "^11.2.7"
-9. "@testing-library/user-event": "^12.8.3"
-10. "@types/react": "^17.0.0"
-11. "@types/react-dom": "^17.0.0"
-12. "axios": "^0.22.0"
-13. "react": "^17.0.2"
-14. "react-dom": "^17.0.2"
-15. "react-router-dom": "^5.3.0"
-16. "react-scripts": "^4.0.3"
-17. "recharts": "^2.1.6"
-18. "typescript": "^4.4.4"
-19. "web-vitals": "^1.1.2"
-
 <a name="dataset-and-disclaimer"></a>
 ## Dataset and Disclaimer
 1. We have modifed the anime.csv and anime.json to delete the "adult" anime. Please clone repo for the correct file.
