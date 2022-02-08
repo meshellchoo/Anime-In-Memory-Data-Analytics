@@ -1,4 +1,5 @@
-# cs180project-021-sea-cream-jasmine
+# CS180 Anime-In-Memory-Data-Analytics
+## Team Sea Cream Jasmine
 
 
 ## Table of Contents
